@@ -1,15 +1,19 @@
 window.addEventListener('DOMContentLoaded', () => {
+  if (Notification.permission === 'denied') {
+    document.body.innerHTML =
+      '<h1>Permission not enabled to run the website!</h1>';
+    return;
+  }
+
   alert(
     "I have implemented 0 CSS on this page, things will look unpleasant. Viewer's discretion is advised"
   );
   if (!confirm('Enter the site?')) {
-    document.getElementById('hidden-image').style.display = "block";
-  }
-  else {
-    document.getElementById('main').style.display = "block";
+    document.getElementById('hidden-image').style.display = 'block';
+  } else {
+    document.getElementById('main').style.display = 'block';
   }
 });
-
 
 const randomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
